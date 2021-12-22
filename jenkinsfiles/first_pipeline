@@ -1,12 +1,12 @@
 #!groovy
 // Check properties
-properties([disableConcurrentBuilds()])
+properties([disableConcurrentBuilds()]) // Prevent concurrent pipeline execution 
 
 pipeline {
-    agent any
+    agent any // Execute this pipeline or any of its stages on any available agent
     options {
-        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10')) // Old builds (number of build logs, artifacts are only saved in this number of build logs) 
+        timestamps() // Enable time stamps for all builds in the pipeline
     }
     stages {
         stage("First step") {
