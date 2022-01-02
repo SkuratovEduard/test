@@ -1,4 +1,7 @@
-.terraform.lock.hcl
+.terraform/*
 .terraform
 *.tfstate
 *.tfstate.backup
+node_modules
+.DS_Store
+.idea/*
